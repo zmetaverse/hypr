@@ -24,7 +24,7 @@ export const parse = createHandler(() => {
 
 export const serialize = createHandler(() => {
   return function handler(e, c, response = {}) {
-    const { cookies = {} } = response
+    const { cookies = {}} = response
 
     const serialized = Object.keys(cookies)
       .filter((key) => !cookies[key].__hypr__) // ignore parsed JSON or primitives
